@@ -35,7 +35,7 @@ body {
   color: var(--ink);
   background: var(--white);
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow-x: clip; /* contains stray width without breaking position: sticky */
   cursor: none;
 }
 
@@ -163,7 +163,12 @@ body.nav-dark .cursor { border-color: rgba(255,255,255,0.6); }
 @media (max-width: 860px) {
   .nav__links, .nav__cta { display: none; }
   .burger { display: flex; }
+  .hero__scroll { display: none; } /* avoid overlap with hero buttons on short screens */
 }
+/* Burger → X */
+.burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.burger.open span:nth-child(2) { opacity: 0; }
+.burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
 /* ============================================================
    Hero
@@ -324,6 +329,11 @@ body.nav-dark .cursor { border-color: rgba(255,255,255,0.6); }
 .compare__row .col-us { background: var(--paper); font-weight: 500; }
 .mark-yes::before { content: "＋"; font-weight: 700; }
 .mark-no::before { content: "－"; opacity: 0.4; }
+@media (max-width: 560px) {
+  .compare__row { grid-template-columns: 1.25fr 1fr 1fr; }
+  .compare__row > div { padding: 0.85rem 0.6rem; font-size: 0.8rem; gap: 0.35rem; }
+  .compare__head > div { font-size: 0.58rem; letter-spacing: 0.1em; }
+}
 
 /* ============================================================
    Big statement
