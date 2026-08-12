@@ -429,15 +429,37 @@ body.nav-dark .cursor { border-color: rgba(255,255,255,0.6); }
 /* ============================================================
    Preloader
    ============================================================ */
+/* Skips instantly on later pages in the same session — no flash */
+.no-intro .preloader { display: none !important; }
+
 .preloader {
   position: fixed; inset: 0; background: var(--black); z-index: 10000;
   display: flex; align-items: center; justify-content: center; flex-direction: column;
-  transition: opacity .8s var(--ease), visibility .8s;
+  transition: transform 1s var(--ease-io);
+  overflow: hidden;
 }
-.preloader.done { opacity: 0; visibility: hidden; }
-.preloader__brand { color: #fff; font-weight: 600; letter-spacing: 0.5em; font-size: 1.4rem; padding-left: 0.5em; }
-.preloader__bar { width: 180px; height: 1px; background: rgba(255,255,255,0.2); margin-top: 1.6rem; overflow: hidden; }
-.preloader__bar i { display: block; height: 100%; width: 0; background: #fff; animation: load 1.3s var(--ease) forwards; }
+.preloader.done { transform: translateY(-101%); }
+.preloader__brand {
+  color: #fff; font-weight: 600; letter-spacing: 0.5em; font-size: clamp(1.6rem, 5vw, 2.6rem);
+  padding-left: 0.5em; position: relative;
+  opacity: 0; transform: translateY(18px);
+  animation: introBrand 1s var(--ease) .1s forwards;
+}
+.preloader__brand::after {
+  content: ""; position: absolute; left: 0; bottom: -14px; height: 1px; width: 100%;
+  background: linear-gradient(90deg, transparent, #fff, transparent);
+  transform: scaleX(0); transform-origin: left;
+  animation: introSweep 1.2s var(--ease) .35s forwards;
+}
+.preloader__bar { width: min(220px, 46vw); height: 2px; background: rgba(255,255,255,0.16); margin-top: 2.6rem; overflow: hidden; }
+.preloader__bar i { display: block; height: 100%; width: 0; background: #fff; animation: load 1.45s var(--ease) forwards; }
+.preloader__count {
+  position: absolute; bottom: clamp(1.4rem, 4vw, 2.6rem); right: clamp(1.4rem, 5vw, 3.6rem);
+  font-family: var(--font-display); font-size: clamp(2.6rem, 10vw, 7rem); line-height: .8; color: #fff; opacity: .9;
+}
+.preloader__count sup { font-size: .3em; vertical-align: super; opacity: .55; margin-left: .05em; }
+@keyframes introBrand { to { opacity: 1; transform: none; } }
+@keyframes introSweep { to { transform: scaleX(1); } }
 @keyframes load { to { width: 100%; } }
 
 /* Utility */

@@ -7,17 +7,41 @@
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
-  /* ---------- Preloader ---------- */
-  window.addEventListener("load", () => {
-    const pre = document.querySelector(".preloader");
-    if (pre) setTimeout(() => pre.classList.add("done"), 900);
-    document.body.classList.add("loaded");
-    // trigger hero lines
+  /* ---------- Intro / preloader (first load per session only) ---------- */
+  function playHeroLines(delay) {
     document.querySelectorAll(".hero h1 .line > span").forEach((s, i) => {
       s.style.transition = "transform 1s var(--ease)";
-      s.style.transitionDelay = 0.9 + i * 0.12 + "s";
+      s.style.transitionDelay = delay + i * 0.12 + "s";
       requestAnimationFrame(() => (s.style.transform = "none"));
     });
+  }
+
+  window.addEventListener("load", () => {
+    document.body.classList.add("loaded");
+    const pre = document.querySelector(".preloader");
+    const skip = document.documentElement.classList.contains("no-intro");
+
+    // Already seen the intro this session (or nothing to show) → straight in.
+    if (skip || !pre) {
+      playHeroLines(0.15);
+      return;
+    }
+
+    // First visit: count up, then lift the curtain.
+    const counter = pre.querySelector(".preloader__count");
+    const dur = 1450;
+    let start = null;
+    const tick = (t) => {
+      if (start === null) start = t;
+      const p = Math.min((t - start) / dur, 1);
+      if (counter) counter.innerHTML = Math.round(p * 100) + "<sup>%</sup>";
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+
+    try { sessionStorage.setItem("andro_intro", "1"); } catch (e) {}
+    setTimeout(() => pre.classList.add("done"), 1650);
+    playHeroLines(2.15); // reveal hero as the curtain lifts
   });
 
   /* ---------- Custom cursor ---------- */
