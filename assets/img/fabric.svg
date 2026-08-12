@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" role="img" aria-label="Macro linen weave">
+  <defs>
+    <linearGradient id="bgf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#efeee9"/>
+      <stop offset="1" stop-color="#cbc8c0"/>
+    </linearGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="0.4"/></filter>
+  </defs>
+  <rect width="640" height="800" fill="url(#bgf)"/>
+  <!-- diagonal light -->
+  <path d="M0 0 L640 0 L640 300 L0 500 Z" fill="#fff" opacity="0.18"/>
+
+  <g filter="url(#soft)">
+    <!-- warp (vertical threads) -->
+    <g fill="#a9a69d">
+      <!-- generated columns -->
+    </g>
+    <g>
+      <!-- Woven pattern via rectangles -->
+    </g>
+  </g>
+
+  <!-- Weave built from over/under strokes -->
+  <g stroke-linecap="round">
+    <!-- vertical warp threads -->
+    <g stroke="#b6b3aa" stroke-width="14" opacity="0.9">
+      <line x1="40" y1="0" x2="40" y2="800"/><line x1="120" y1="0" x2="120" y2="800"/>
+      <line x1="200" y1="0" x2="200" y2="800"/><line x1="280" y1="0" x2="280" y2="800"/>
+      <line x1="360" y1="0" x2="360" y2="800"/><line x1="440" y1="0" x2="440" y2="800"/>
+      <line x1="520" y1="0" x2="520" y2="800"/><line x1="600" y1="0" x2="600" y2="800"/>
+    </g>
+    <!-- horizontal weft threads woven on top -->
+    <g stroke="#8f8c83" stroke-width="14" opacity="0.85">
+      <line x1="0" y1="40" x2="640" y2="40"/><line x1="0" y1="120" x2="640" y2="120"/>
+      <line x1="0" y1="200" x2="640" y2="200"/><line x1="0" y1="280" x2="640" y2="280"/>
+      <line x1="0" y1="360" x2="640" y2="360"/><line x1="0" y1="440" x2="640" y2="440"/>
+      <line x1="0" y1="520" x2="640" y2="520"/><line x1="0" y1="600" x2="640" y2="600"/>
+      <line x1="0" y1="680" x2="640" y2="680"/><line x1="0" y1="760" x2="640" y2="760"/>
+    </g>
+    <!-- fine slub irregularities -->
+    <g stroke="#000" stroke-width="1" opacity="0.10">
+      <line x1="80" y1="0" x2="80" y2="800"/><line x1="240" y1="0" x2="240" y2="800"/>
+      <line x1="400" y1="0" x2="400" y2="800"/><line x1="560" y1="0" x2="560" y2="800"/>
+    </g>
+  </g>
+  <rect width="640" height="800" fill="#000" opacity="0.04"/>
+</svg>

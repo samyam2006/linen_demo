@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 760" role="img" aria-label="ANDRO linen lounge short">
+  <defs>
+    <linearGradient id="cloth4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f0efeb"/>
+      <stop offset="0.55" stop-color="#dcdad4"/>
+      <stop offset="1" stop-color="#c8c6bf"/>
+    </linearGradient>
+    <pattern id="lin4" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M0 3h10M0 7h10" stroke="#000" stroke-width="0.7" opacity="0.10"/>
+      <path d="M3 0v10M7 0v10" stroke="#000" stroke-width="0.7" opacity="0.06"/>
+    </pattern>
+    <radialGradient id="shadow4" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#000" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <ellipse cx="300" cy="660" rx="215" ry="34" fill="url(#shadow4)"/>
+
+  <g>
+    <path d="M130 250 L130 210 L470 210 L470 250
+             L474 560 C474 590 456 600 428 598 L322 592
+             C312 592 306 560 300 500
+             C294 560 288 592 278 592 L172 598
+             C144 600 126 590 126 560 Z"
+          fill="url(#cloth4)" stroke="#1a1a1a" stroke-width="2.2"/>
+    <path d="M130 250 L130 210 L470 210 L470 250
+             L474 560 C474 590 456 600 428 598 L322 592
+             C312 592 306 560 300 500
+             C294 560 288 592 278 592 L172 598
+             C144 600 126 590 126 560 Z"
+          fill="url(#lin4)"/>
+    <path d="M300 250 L300 500" stroke="#000" stroke-width="1.2" opacity="0.08"/>
+    <path d="M190 260 C210 380 215 490 210 590" fill="none" stroke="#000" stroke-width="1.4" opacity="0.10"/>
+    <path d="M410 260 C390 380 385 490 390 590" fill="none" stroke="#000" stroke-width="1.4" opacity="0.10"/>
+    <path d="M160 280 C185 400 190 500 185 595" fill="none" stroke="#fff" stroke-width="2" opacity="0.4"/>
+    <!-- draw string -->
+    <path d="M270 232 C285 250 315 250 330 232" fill="none" stroke="#0f0f0f" stroke-width="3"/>
+    <circle cx="270" cy="234" r="3" fill="#0f0f0f"/>
+    <circle cx="330" cy="234" r="3" fill="#0f0f0f"/>
+  </g>
+
+  <g>
+    <rect x="126" y="188" width="348" height="42" rx="6" fill="#0f0f0f"/>
+    <rect x="126" y="188" width="348" height="42" rx="6" fill="url(#lin4)" opacity="0.4"/>
+    <text x="300" y="215" text-anchor="middle" fill="#fff" font-family="'Jost',Helvetica,Arial,sans-serif" font-size="16" letter-spacing="7" font-weight="600">A N D R O</text>
+    <line x1="130" y1="188" x2="470" y2="188" stroke="#fff" stroke-width="1" opacity="0.15"/>
+  </g>
+</svg>

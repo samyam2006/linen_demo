@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 760" role="img" aria-label="ANDRO linen trunk">
+  <defs>
+    <linearGradient id="cloth2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#efeeea"/>
+      <stop offset="0.55" stop-color="#dedcd6"/>
+      <stop offset="1" stop-color="#cbc9c2"/>
+    </linearGradient>
+    <pattern id="lin2" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M0 3h10M0 7h10" stroke="#000" stroke-width="0.7" opacity="0.10"/>
+      <path d="M3 0v10M7 0v10" stroke="#000" stroke-width="0.7" opacity="0.06"/>
+    </pattern>
+    <radialGradient id="shadow2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#000" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <ellipse cx="300" cy="640" rx="205" ry="32" fill="url(#shadow2)"/>
+
+  <g>
+    <path d="M140 250
+             L140 205 L460 205 L460 250
+             L462 400
+             C462 470 440 500 405 505
+             C372 510 350 500 340 470
+             C330 495 322 505 300 505
+             C278 505 270 495 260 470
+             C250 500 228 510 195 505
+             C160 500 138 470 138 400 Z"
+          fill="url(#cloth2)" stroke="#1a1a1a" stroke-width="2.2"/>
+    <path d="M140 250
+             L140 205 L460 205 L460 250
+             L462 400
+             C462 470 440 500 405 505
+             C372 510 350 500 340 470
+             C330 495 322 505 300 505
+             C278 505 270 495 260 470
+             C250 500 228 510 195 505
+             C160 500 138 470 138 400 Z"
+          fill="url(#lin2)"/>
+    <path d="M300 250 L300 480" stroke="#000" stroke-width="1.2" opacity="0.08"/>
+    <path d="M200 270 C230 340 240 420 240 470" fill="none" stroke="#000" stroke-width="1.4" opacity="0.10"/>
+    <path d="M400 270 C370 340 360 420 360 470" fill="none" stroke="#000" stroke-width="1.4" opacity="0.10"/>
+    <path d="M165 290 C200 350 215 420 220 470" fill="none" stroke="#fff" stroke-width="2" opacity="0.5"/>
+  </g>
+
+  <g>
+    <rect x="136" y="182" width="328" height="46" rx="6" fill="#0f0f0f"/>
+    <rect x="136" y="182" width="328" height="46" rx="6" fill="url(#lin2)" opacity="0.4"/>
+    <text x="300" y="211" text-anchor="middle" fill="#fff" font-family="'Jost',Helvetica,Arial,sans-serif" font-size="16" letter-spacing="7" font-weight="600">A N D R O</text>
+    <line x1="140" y1="182" x2="460" y2="182" stroke="#fff" stroke-width="1" opacity="0.15"/>
+  </g>
+
+  <path d="M195 505 C228 510 250 500 260 470" fill="none" stroke="#0f0f0f" stroke-width="6" stroke-linecap="round"/>
+  <path d="M340 470 C350 500 372 510 405 505" fill="none" stroke="#0f0f0f" stroke-width="6" stroke-linecap="round"/>
+</svg>
