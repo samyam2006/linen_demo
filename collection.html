@@ -44,68 +44,25 @@
   </div>
 </section>
 
-<!-- Filter chips (visual) -->
+<!-- Pre-launch gate (injected by store.js when storeLive is false) -->
+<div class="wrap" style="margin-top:2.5rem"><div id="store-gate"></div></div>
+
+<!-- Filter chips -->
 <section style="border-bottom:1px solid var(--line);position:sticky;top:var(--nav-h);background:rgba(255,255,255,.9);backdrop-filter:blur(10px);z-index:500">
   <div class="wrap" style="display:flex;gap:.7rem;flex-wrap:wrap;padding:1.1rem 0">
-    <button class="chip" data-filter="all" style="border:1px solid var(--ink);background:var(--ink);color:#fff;padding:.5rem 1.1rem;border-radius:100px;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase">All</button>
-    <button class="chip" data-filter="boxer" style="border:1px solid var(--line);background:none;padding:.5rem 1.1rem;border-radius:100px;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase">Boxer Briefs</button>
-    <button class="chip" data-filter="trunk" style="border:1px solid var(--line);background:none;padding:.5rem 1.1rem;border-radius:100px;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase">Trunks</button>
-    <button class="chip" data-filter="brief" style="border:1px solid var(--line);background:none;padding:.5rem 1.1rem;border-radius:100px;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase">Briefs</button>
-    <button class="chip" data-filter="lounge" style="border:1px solid var(--line);background:none;padding:.5rem 1.1rem;border-radius:100px;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase">Lounge</button>
+    <button class="chip chip--on" data-filter="all">All</button>
+    <button class="chip" data-filter="boxer">Boxer Briefs</button>
+    <button class="chip" data-filter="trunk">Trunks</button>
+    <button class="chip" data-filter="brief">Briefs</button>
+    <button class="chip" data-filter="lounge">Lounge</button>
   </div>
 </section>
 
 <!-- Products -->
 <section class="section" style="padding-top:3.5rem">
   <div class="wrap">
-    <div class="grid-products" id="grid">
-
-      <a href="#" class="product reveal" data-cat="boxer">
-        <div class="product__media"><span class="product__tag">Bestseller</span><img src="assets/img/boxer-brief.svg" alt="The Meridian"><div class="product__quick">Add to Cart +</div></div>
-        <div class="product__meta"><div><div class="product__name">The Meridian</div><div class="product__fabric">Boxer Brief · Charcoal Linen</div></div><div class="product__price">$42</div></div>
-      </a>
-
-      <a href="#" class="product reveal d1" data-cat="boxer">
-        <div class="product__media"><img src="assets/img/boxer-brief.svg" alt="The Meridian Ivory"><div class="product__quick">Add to Cart +</div></div>
-        <div class="product__meta"><div><div class="product__name">The Meridian</div><div class="product__fabric">Boxer Brief · Ivory Linen</div></div><div class="product__price">$42</div></div>
-      </a>
-
-      <a href="#" class="product reveal d2" data-cat="trunk">
-        <div class="product__media"><img src="assets/img/trunk.svg" alt="The Anvil"><div class="product__quick">Add to Cart +</div></div>
-        <div class="product__meta"><div><div class="product__name">The Anvil</div><div class="product__fabric">Trunk · Charcoal Linen</div></div><div class="product__price">$38</div></div>
-      </a>
-
-      <a href="#" class="product reveal" data-cat="trunk">
-        <div class="product__media"><span class="product__tag">Limited</span><img src="assets/img/trunk.svg" alt="The Anvil Slate"><div class="product__quick">Add to Cart +</div></div>
-        <div class="product__meta"><div><div class="product__name">The Anvil</div><div class="product__fabric">Trunk · Slate Linen</div></div><div class="product__price">$38</div></div>
-      </a>
-
-      <a href="#" class="product reveal d1" data-cat="brief">
-        <div class="product__media"><span class="product__tag">New</span><img src="assets/img/brief.svg" alt="The Origin"><div class="product__quick">Add to Cart +</div></div>
-        <div class="product__meta"><div><div class="product__name">The Origin</div><div class="product__fabric">Brief · Ivory Linen</div></div><div class="product__price">$34</div></div>
-      </a>
-
-      <a href="#" class="product reveal d2" data-cat="brief">
-        <div class="product__media"><img src="assets/img/brief.svg" alt="The Origin Charcoal"><div class="product__quick">Add to Cart +</div></div>
-        <div class="product__meta"><div><div class="product__name">The Origin</div><div class="product__fabric">Brief · Charcoal Linen</div></div><div class="product__price">$34</div></div>
-      </a>
-
-      <a href="#" class="product reveal" data-cat="lounge">
-        <div class="product__media"><span class="product__tag">New</span><img src="assets/img/lounge.svg" alt="The Sabbath"><div class="product__quick">Add to Cart +</div></div>
-        <div class="product__meta"><div><div class="product__name">The Sabbath</div><div class="product__fabric">Lounge Short · Ivory Linen</div></div><div class="product__price">$58</div></div>
-      </a>
-
-      <a href="#" class="product reveal d1" data-cat="lounge">
-        <div class="product__media"><img src="assets/img/lounge.svg" alt="The Sabbath Charcoal"><div class="product__quick">Add to Cart +</div></div>
-        <div class="product__meta"><div><div class="product__name">The Sabbath</div><div class="product__fabric">Lounge Short · Charcoal Linen</div></div><div class="product__price">$58</div></div>
-      </a>
-
-      <a href="#" class="product reveal d2" data-cat="boxer">
-        <div class="product__media"><span class="product__tag">3-Pack</span><img src="assets/img/stack.svg" alt="The Foundation Bundle"><div class="product__quick">Add to Cart +</div></div>
-        <div class="product__meta"><div><div class="product__name">The Foundation</div><div class="product__fabric">3-Pack Boxer Briefs</div></div><div class="product__price">$108</div></div>
-      </a>
-
-    </div>
+    <!-- Rendered from assets/js/products.js -->
+    <div class="grid-products" id="shop-grid"></div>
 
     <!-- Bundle band -->
     <div class="reveal mt-4" style="margin-top:5rem;background:var(--black);color:#fff;padding:clamp(2.5rem,6vw,4.5rem);display:grid;grid-template-columns:1.2fr 1fr;gap:2rem;align-items:center">
@@ -134,22 +91,7 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
-<script>
-  // Simple category filter
-  (function(){
-    const chips = document.querySelectorAll('.chip');
-    const items = document.querySelectorAll('#grid .product');
-    chips.forEach(c => c.addEventListener('click', () => {
-      chips.forEach(x => { x.style.background='none'; x.style.color='inherit'; x.style.borderColor='var(--line)'; });
-      c.style.background='var(--ink)'; c.style.color='#fff'; c.style.borderColor='var(--ink)';
-      const f = c.dataset.filter;
-      items.forEach(it => {
-        const show = f === 'all' || it.dataset.cat === f;
-        it.style.transition='opacity .4s, transform .4s';
-        it.style.display = show ? '' : 'none';
-      });
-    }));
-  })();
-</script>
+<script src="assets/js/products.js"></script>
+<script src="assets/js/store.js"></script>
 </body>
 </html>

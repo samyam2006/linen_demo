@@ -115,6 +115,10 @@
     { threshold: 0.15, rootMargin: "0px 0px -8% 0px" }
   );
   document.querySelectorAll(".reveal, .line-reveal").forEach((el) => io.observe(el));
+  // Allow dynamically-rendered content (e.g. store cards) to opt into reveals.
+  window.ANDRO_observeReveals = function () {
+    document.querySelectorAll(".reveal:not(.in), .line-reveal:not(.in)").forEach((el) => io.observe(el));
+  };
 
   /* ---------- Count-up stats ---------- */
   const countIO = new IntersectionObserver(

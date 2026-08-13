@@ -49,6 +49,31 @@ python3 -m http.server 8000
     └── img/*.svg          # product mockups, packaging, textures, favicon
 ```
 
+## Store & pre-launch "paywall"
+
+The shop is **config-driven** and ships in pre-launch mode. Everything lives in
+one file: **`assets/js/products.js`**.
+
+**Right now (`storeLive: false`)** — the Collection shows a **"Launching Soon"
+gate** with an email waitlist, product cards read **"Notify Me,"** and there's
+no cart. It's a live-looking teaser that builds a customer list before launch.
+
+**To go live once the supplier is in place — edit only `products.js`:**
+
+1. Add/edit items in the `products` array (name, price, sizes, image, description).
+2. Paste a **Stripe Payment Link** into each product's `checkoutUrl`
+   (Stripe → Payment Links → one per product → copy URL). No server needed.
+3. (Optional) paste a form endpoint into `waitlistEndpoint` (e.g. Formspree) so
+   waitlist emails are captured for real; until then they're stored in-browser.
+4. Flip **`storeLive: true`**.
+
+That turns on the cart, quick-add with size selection, the slide-out cart
+drawer, quantity controls, free-shipping progress, and checkout — across every
+page. No HTML/CSS changes required.
+
+The home "Featured" row and the Collection grid both render from this same file,
+so adding a product shows it everywhere automatically.
+
 ## A note on claims
 
 This is a brand/design concept. The site deliberately frames the "testosterone"
